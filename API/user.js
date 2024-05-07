@@ -42,12 +42,12 @@ userApp.put('/lend', async (req, res) => {
   if(lended === undefined){
   await userCollection.findOneAndUpdate(
     {email : email},
-    {$inc: {points : 4}, $addToSet : {lended : bookData}},
+    {$inc: {points : 4*book.bookCount}, $addToSet : {lended : bookData}},
     {ReturnDocument : 'after'}
   )}else{
     const upd = await userCollection.findOneAndUpdate(
       {email : email , 'lended.name' : book.name, 'lended.author' : book.author},
-      {$inc: {points : 4, 'lended.$.bookCount' : book.bookCount}},
+      {$inc: {points : 4*book.bookCount, 'lended.$.bookCount' : book.bookCount}},
       {ReturnDocument : 'after'}
     )
   }
