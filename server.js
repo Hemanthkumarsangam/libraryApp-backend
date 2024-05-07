@@ -24,13 +24,10 @@ MongoClient.connect(uri)
   app.set('salesCollection', salesCollection)
   app.set('booksCollection', booksCollection)
 
-  console.log('DB connection established')
 })
 
 app.use('/user', userApp)
 app.use('/book', bookApp)
 app.use('/sales', salesApp)
 
-app.listen(port, () => {
-  console.log(`Server listening on port number ${port}\nhttps://localhost:7777`)
-})
+app.listen(port)
