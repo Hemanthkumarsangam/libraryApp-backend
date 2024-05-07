@@ -7,7 +7,6 @@ const userApp = require('./API/user')
 const salesApp = require('./API/sales')
 const app = express()
 const port = process.env.PORT
-// const uri = process.env.URI || "mongodb+srv://hemanthKumar:somu1123@cluster0.pez6mfh.mongodb.net/"
 const uri = process.env.MONGO_URI
 
 app.use(express.json())
