@@ -95,7 +95,7 @@ userApp.put('/return', async (req, res) => {
   const userResult = result.borrowed.find((user) => user.date.getTime() === book.date.getTime())
   const date = new Date()
   const diff = (userResult.date.getFullYear() - date.getFullYear())*365 + (userResult.date.getMonth() - date.getMonth())*30 + (userResult.date.getDate() - date.getDate()) * 7
-  const point = (diff > 45) ? -1*(diff - 45) : 1
+  const point = (diff < -45) ? (diff + 45) : 1
 
   const upd = await userCollection.findOneAndUpdate(
     {email : book.email, 'borrowed.date':book.date},
