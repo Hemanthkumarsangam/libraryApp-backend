@@ -32,7 +32,7 @@ bookApp.post('/borrow', async (req, res) => {
     res.send({message : 'Book not found'})
     return
   }
-  res.send(result._id)
+  res.send({message : 'Book granted'})
 })
 
 bookApp.put('/return', async (req, res) => {
