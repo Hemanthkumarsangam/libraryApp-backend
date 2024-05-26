@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 function sendMail(subject, message, to){
     const mailOptions = {
         from : process.env.MAIL,
-        to : to
+        to : to,
         subject : subject,
         html : `<hmtl><head></head><body><p>${message}</p></body></hmtl>`
     }
