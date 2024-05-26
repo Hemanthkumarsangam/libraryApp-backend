@@ -7,7 +7,7 @@ const userApp = require('./API/user')
 const salesApp = require('./API/sales')
 const app = express()
 const port = process.env.PORT
-const uri = 'mongodb://localhost:27017'
+const uri = process.env.MONGO_URI
 
 app.use(express.json())
 app.use(cors())
