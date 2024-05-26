@@ -37,7 +37,7 @@ function sendRequestMail(subject, message){
                     <body>
                         <p>${message}</p>
                         <br><br><br>
-                        <a href = 'http://localhost:3000/admin'><button id='grantBtn'>Go to Admin page</button></a>
+                        <a href = `${process.env.ADMIN}`><button id='grantBtn'>Go to Admin page</button></a>
                     </body>
                 </hmtl>`
     }
